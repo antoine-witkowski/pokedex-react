@@ -3,7 +3,7 @@ import List from "./Containers/List.jsx"
 function App() {
     return (
         <>
-            <h1 className="text-center">Welcome on Vitkov Pokedex</h1>
+            <h1 className="text-2xl font-bold">Welcome on Vitkov Pokedex</h1>
             <List/>
         </>
     );

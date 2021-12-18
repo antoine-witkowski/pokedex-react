@@ -1,8 +1,12 @@
+import FetchPokeApiHook from "./FetchPokeApiHook";
+
 const List = () => {
     return (
-        <ul>
-            Pokemon
-        </ul>
+        <div>
+            <ul className="grid gap-4 grid-cols-5 grid-rows-3">
+                <FetchPokeApiHook/>
+            </ul>
+        </div>
     )
 }
 
