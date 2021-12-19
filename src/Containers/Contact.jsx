@@ -1,5 +1,6 @@
 import {useState} from "react";
 import ReactModal from "react-modal";
+import Button from "../Components/Button";
 
 const Contact = () => {
 
@@ -11,14 +12,17 @@ const Contact = () => {
     return (
         <>
             <div>
-                <button onClick={handleOpenModal}>Contact</button>
+                <Button label="Contact"
+                        onClick={handleOpenModal}
+                        classList="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"/>
+
                 <ReactModal isOpen={modalDisplay}
                             contentLabel="Contact Modal"
                             ariaHideApp={false}>
-                    <button onClick={handleCloseModal}
-                            className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
-                        Close
-                    </button>
+
+                    <Button label="Close"
+                            onClick={handleCloseModal}
+                            classList="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"/>
 
                     <form action="mailto:witkowski.antoine@gmail.com" method="post" className="w-full max-w-sm">
 
@@ -83,10 +87,9 @@ const Contact = () => {
                             <div className="md:w-2/3"></div>
 
                             <div className="md:w-2/3">
-                                <button
-                                    className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
-                                    Send
-                                </button>
+
+                                <Button label="Send"
+                                        classList="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"/>
                             </div>
                         </div>
 
