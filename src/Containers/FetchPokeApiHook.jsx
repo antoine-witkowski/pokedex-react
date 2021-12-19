@@ -1,4 +1,6 @@
 import {useEffect, useState} from "react";
+import Pokemon from "./Pokemon";
+import {Link} from "react-router-dom";
 
 const FetchPokeApiHook = () => {
     const [error, setError] = useState(false);
@@ -41,7 +43,9 @@ const FetchPokeApiHook = () => {
                 return (
                     <li key={index}
                         className="p-3 hover:bg-violet-600 hover:text-blue-200">
-                        <a href={url}>#{index + 1} - {capitalizeFirstLetter(name)}</a>
+                        <Link to={`/pokemon/${name}`}>
+                            #{index + 1} - {capitalizeFirstLetter(name)}
+                        </Link>
                     </li>)
             }) : "Si cela apparait c'est que j'ai toujours pas compris les states (-_-)" }
         </>

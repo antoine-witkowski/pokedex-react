@@ -2,6 +2,7 @@ import {Routes, Route, NavLink} from "react-router-dom";
 
 import List from "./Containers/List.jsx"
 import Contact from "./Containers/Contact";
+import Pokemon from "./Containers/Pokemon";
 
 function App() {
     const activeCSS = "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-purple-700 font-semibold"
@@ -32,7 +33,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<>You are on Homepage</>}/>
                 <Route path="/pokemon" element={<List/>}/>
-                <Route path="/pokemon/:name" element={<>Pokemon CNI</>}/>
+                <Route path="/pokemon/:name" element={<Pokemon/>}/>
                 <Route path="/contact" element={<Contact/>}/>
             </Routes>
 
