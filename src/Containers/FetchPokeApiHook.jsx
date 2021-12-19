@@ -40,7 +40,7 @@ const FetchPokeApiHook = () => {
             {Array.isArray(data) ? data.map(({name, url}, index) => {
                 return (
                     <li key={index}
-                        className="p-3 hover:bg-blue-600 hover:text-blue-200">
+                        className="p-3 hover:bg-violet-600 hover:text-blue-200">
                         <a href={url}>#{index + 1} - {capitalizeFirstLetter(name)}</a>
                     </li>)
             }) : "Si cela apparait c'est que j'ai toujours pas compris les states (-_-)" }
