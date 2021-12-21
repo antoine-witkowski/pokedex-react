@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import Pokemon from "./Pokemon";
 import {Link} from "react-router-dom";
 
 const FetchPokeApiHook = () => {
