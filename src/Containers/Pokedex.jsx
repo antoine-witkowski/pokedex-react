@@ -1,6 +1,6 @@
 import FetchPokeApiHook from "./FetchPokeApiHook";
 
-const List = () => {
+const Pokedex = () => {
     return (
         <div>
             <ul className="grid gap-4 grid-cols-5 grid-rows-3">
@@ -10,4 +10,4 @@ const List = () => {
     )
 }
 
-export default List;
+export default Pokedex;

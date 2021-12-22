@@ -1,6 +1,6 @@
 import {Routes, Route, NavLink} from "react-router-dom";
 
-import List from "./Containers/List.jsx"
+import Pokedex from "./Containers/Pokedex.jsx"
 import Contact from "./Containers/Contact";
 import Pokemon from "./Containers/Pokemon";
 
@@ -32,7 +32,7 @@ function App() {
 
             <Routes>
                 <Route path="/" element={<>You are on Homepage</>}/>
-                <Route path="/pokemon" element={<List/>}/>
+                <Route path="/pokemon" element={<Pokedex/>}/>
                 <Route path="/pokemon/:name" element={<Pokemon/>}/>
                 <Route path="/contact" element={<Contact/>}/>
             </Routes>
