@@ -4,6 +4,8 @@ import Pokedex from "./Containers/Pokedex.jsx"
 import Contact from "./Containers/Contact";
 import Pokemon from "./Containers/Pokemon";
 import Favorites from "./Components/Favorites";
+import Filter from "./Containers/Filter";
+import {useState} from "react";
 
 function App() {
     const activeCSS = "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-purple-700 font-semibold"
@@ -21,6 +23,11 @@ function App() {
                     <li className="-mb-px mr-1">
                         <NavLink to="/pokemon" className={({isActive}) => (isActive ? activeCSS : inactiveCSS)}>
                             Pokemon List
+                        </NavLink>
+                    </li>
+                    <li className="-mb-px mr-1">
+                        <NavLink to="/type" className={({isActive}) => (isActive ? activeCSS : inactiveCSS)}>
+                            Pokemon Filter Type
                         </NavLink>
                     </li>
                     <li className="-mb-px mr-1">
@@ -42,6 +49,7 @@ function App() {
                 <Route path="/pokemon/:name" element={<Pokemon/>}/>
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/favorites" element={<Favorites/>}/>
+                <Route path="/type" element={<Filter/>}/>
             </Routes>
 
         </>
