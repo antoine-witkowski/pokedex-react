@@ -1,10 +1,18 @@
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
+import Button from "../Components/Button";
 
 const FetchPokeApiHook = () => {
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState({});
+    const [favorites, setFavorites] = useState(localStorage.getItem("favorites") ? JSON.parse(localStorage.getItem("favorites")) : [])
+
+    const addToFavorites = (index) => {
+        const tmpFavorites = favorites;
+        tmpFavorites[index].favorite = !tmpFavorites[index].favorite
+        setFavorites(tmpFavorites);
+    }
 
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -41,12 +49,18 @@ const FetchPokeApiHook = () => {
             {Array.isArray(data) ? data.map(({name, url}, index) => {
                 return (
                     <li key={index}
-                        className="p-3 hover:bg-violet-600 hover:text-blue-200">
-                        <Link to={`/pokemon/${name}`}>
-                            #{index + 1} - {capitalizeFirstLetter(name)}
-                        </Link>
+                        className="flex flex-row p-3 hover:bg-violet-600 hover:text-blue-200">
+                        <div className="basis-3/4">
+                            <Link to={`/pokemon/${name}`}>
+                                #{index + 1} - {capitalizeFirstLetter(name)}
+                            </Link>
+                        </div>
+                        <div className="basis-1/4">
+                            <Button label="+" onClick={addToFavorites}
+                                    classList="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"/>
+                        </div>
                     </li>)
-            }) : "Si cela apparait c'est que j'ai toujours pas compris les states (-_-)" }
+            }) : "Si cela apparait c'est que j'ai toujours pas compris les states (-_-)"}
         </>
     )
 };
