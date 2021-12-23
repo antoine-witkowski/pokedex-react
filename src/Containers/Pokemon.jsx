@@ -89,11 +89,13 @@ const Pokemon = () => {
 
                         <h4 className="text-2xl font-bold p-1 text-center">Abilities</h4>
                         <ul className="flex flex-row">
-                            {pokemon.abilities.map((ability, index) => (
-                                <li key={index} className="p-2">
-                                    {ability.ability.name}
-                                </li>
-                            ))}
+                            {pokemon.abilities.map((ability, index) => {
+                                return index < 3 ?
+                                    <li key={index} className="p-2">
+                                        {ability.ability.name}
+                                    </li>
+                                    : null
+                            })}
                         </ul>
                     </div>
                     <div>
