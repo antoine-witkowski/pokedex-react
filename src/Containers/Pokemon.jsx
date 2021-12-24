@@ -63,52 +63,69 @@ const Pokemon = () => {
             </Link>
 
             {Object.keys(pokemon).length !== 0 ?
-                <div className="flex w-max bg-violet-200 border-black border-4 rounded-xl p-4 text-black">
-                    <div>
+                <div className="grid grid-cols-2 w-max bg-violet-200 border-black border-4 rounded-xl p-4 text-black">
+
+                    <div className="FirstGrid">
+
                         <div className="w-90 bg-blue-200 border-black border-4 rounded-xl p-4 text-black">
-                            <h2 className="text-4xl font-bold p-1 text-center">{pokemon.name}</h2>
+                            <h2 className="capitalize text-4xl font-bold p-1 text-center">{pokemon.name}</h2>
 
-                            <img className="mx-auto" src={pokemon.sprites.front_default} alt={pokemon.name}/>
+                            <img width="200" className="mx-auto" src={pokemon.sprites.front_default}
+                                 alt={pokemon.name}/>
 
-
-                        </div>
-                        <ul className="flex flex-row">
-                            {pokemon.types.map((type, index) => (
-                                <li key={index}
-                                    className={"border-2 border-black rounded-xl m-2 p-2 " + color_type[type.type.name]}>
-                                    {type.type.name}
-                                </li>
-                            ))}
-                        </ul>
-
-                        <div className="">
-                            <div className="">ID: #{pokemon.id}</div>
-                            <div className="">Weight: {pokemon.weight} lbs</div>
-                            <div className="">Height: {pokemon.height} "</div>
+                            <span>#{pokemon.id}</span>
                         </div>
 
-                        <h4 className="text-2xl font-bold p-1 text-center">Abilities</h4>
-                        <ul className="flex flex-row">
-                            {pokemon.abilities.map((ability, index) => {
-                                return index < 3 ?
-                                    <li key={index} className="p-2">
-                                        {ability.ability.name}
-                                    </li>
-                                    : null
-                            })}
-                        </ul>
                     </div>
-                    <div>
+
+                    <div className="SecondGrid">
+
                         <h4 className="text-2xl font-bold p-1 text-center">Statistics</h4>
+
                         <ul>
                             {pokemon.stats.map((stat, index) => (
-                                <li key={index} className="m-1 p-1 rounded-xl flex flex-row-reverse">
+                                <li key={index} className="capitalize m-1 p-1 rounded-xl flex flex-row-reverse">
                                     {stat.stat.name} : {stat.base_stat}
                                 </li>
                             ))}
                         </ul>
 
                     </div>
+
+                    <div className="ThirdGrid">
+
+                        <ul className="flex flex-row">
+                            {pokemon.types.map((type, index) => (
+                                <li key={index}
+                                    className={"capitalize border-2 border-black rounded-xl m-2 p-2 " + color_type[type.type.name]}>
+                                    {type.type.name}
+                                </li>
+                            ))}
+                        </ul>
+
+                        <h4 className="text-2xl font-bold p-1 text-center">Abilities</h4>
+
+                        <ul className="flex flex-row">
+                            {pokemon.abilities.map((ability, index) => {
+                                return index < 3 ?
+                                    <li key={index} className="p-2 capitalize">
+                                        {ability.ability.name}
+                                    </li>
+                                    : null
+                            })}
+                        </ul>
+
+                    </div>
+
+                    <div className="FourthGrid">
+
+                        <div className="">
+                            <div className="">Weight: {pokemon.weight} lbs</div>
+                            <div className="">Height: {pokemon.height} "</div>
+                        </div>
+
+                    </div>
+
                 </div>
                 : "Si cela apparait c'est que j'ai toujours pas compris les states (-_-)"}
         </>

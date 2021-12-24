@@ -14,10 +14,6 @@ const FetchPokeApiHook = () => {
         setFavorites(tmpFavorites);
     }
 
-    const capitalizeFirstLetter = (string) => {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-
     const fetchData = async () => {
         try {
             const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=251");
@@ -52,7 +48,7 @@ const FetchPokeApiHook = () => {
                         className="flex flex-row p-3 hover:bg-violet-600 hover:text-blue-200">
                         <div className="basis-3/4">
                             <Link to={`/pokemon/${name}`}>
-                                #{index + 1} - {capitalizeFirstLetter(name)}
+                                #{index + 1} - <span className="capitalize">{name}</span>
                             </Link>
                         </div>
                         <div className="basis-1/4">
