@@ -1,7 +1,7 @@
 import {useContext} from "react";
 import MainContext from "../contexts/FetchPokedex";
 import {Link} from "react-router-dom";
-import Button from "../Components/Button";
+import Button from "../components/Button";
 
 const Pokedex = () => {
     const { addToFavorites, data } = useContext(MainContext);

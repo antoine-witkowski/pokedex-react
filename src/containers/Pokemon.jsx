@@ -1,6 +1,9 @@
 import {Link, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-import Button from "../Components/Button";
+import Button from "../components/Button";
+import scale_logo from "../assets/electronic-scale.png";
+import ladder_logo from "../assets/ladder.png";
+
 
 const Pokemon = () => {
 
@@ -119,9 +122,11 @@ const Pokemon = () => {
 
                     <div className="FourthGrid">
 
-                        <div className="">
-                            <div className="">Weight: {pokemon.weight} lbs</div>
-                            <div className="">Height: {pokemon.height} "</div>
+                        <div className="grid grid-cols-2">
+                            <div>{pokemon.weight} lbs</div>
+                            <div><img src={scale_logo} alt="weight" width="60"/></div>
+                            <div>{pokemon.height} "</div>
+                            <div><img src={ladder_logo} alt="height" width="60"/></div>
                         </div>
 
                     </div>

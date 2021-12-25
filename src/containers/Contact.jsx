@@ -1,6 +1,6 @@
 import {useState} from "react";
 import ReactModal from "react-modal";
-import Button from "../Components/Button";
+import Button from "../components/Button";
 
 const Contact = () => {
 
