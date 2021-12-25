@@ -6,17 +6,22 @@ import Button from "../components/Button";
 const Pokedex = () => {
     const { addToFavorites, data } = useContext(MainContext);
 
+    const imagePokemon = (id) => {
+        return `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${id + 1}.png?raw=true`;
+    }
+
     return (
         <div>
-            <ul className="grid gap-4 grid-cols-5 grid-rows-3">
+            <ul className="grid gap-4 grid-cols-8 grid-rows-3">
 
                 {Array.isArray(data) ? data.map(({name, url}, index) => {
                     return (
                         <li key={index}
-                            className="flex flex-row p-3 hover:bg-violet-600 hover:text-blue-200">
+                            className="flex flex-row p-3 border hover:bg-violet-600 hover:text-blue-200">
                             <div className="basis-3/4">
                                 <Link to={`/pokemon/${name}`}>
                                     #{index + 1} - <span className="capitalize">{name}</span>
+                                    <img src={imagePokemon(index)} alt=""/>
                                 </Link>
                             </div>
                             <div className="basis-1/4">
