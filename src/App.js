@@ -5,6 +5,7 @@ import Contact from "./containers/Contact";
 import Pokemon from "./containers/Pokemon";
 import Favorites from "./components/Favorites";
 import Filter from "./containers/Filter";
+import Home from "./components/Home";
 
 function App() {
     const activeCSS = "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-purple-700 font-semibold"
@@ -43,7 +44,7 @@ function App() {
             </nav>
 
             <Routes>
-                <Route path="/" element={<>You are on Homepage</>}/>
+                <Route path="/" element={<Home/>}/>
                 <Route path="/pokemon" element={<Pokedex/>}/>
                 <Route path="/pokemon/:name" element={<Pokemon/>}/>
                 <Route path="/contact" element={<Contact/>}/>
