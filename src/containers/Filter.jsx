@@ -1,32 +1,14 @@
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
+import MainContext from "../contexts/FetchPokedex";
 
 const Filter = () => {
 
     const [filter, setFilter] = useState(16);
-
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState({});
-    const [color_type, setType] = useState({
-        bug: 'bg-green-400',
-        dark: 'bg-gray-800',
-        dragon: 'bg-purple-800',
-        electric: 'bg-yellow-400',
-        fairy: 'bg-pink-400',
-        fighting: 'bg-red-900',
-        fire: 'bg-red-400',
-        flying: 'bg-indigo-600',
-        ghost: 'bg-indigo-700',
-        grass: 'bg-green-600',
-        ground: 'bg-yellow-700',
-        ice: 'bg-blue-400',
-        normal: 'bg-gray-500',
-        poison: 'bg-purple-600',
-        psychic: 'bg-pink-700',
-        rock: 'bg-yellow-600',
-        steel: 'bg-gray-400',
-        water: 'bg-blue-500',
-    });
+
+    const { color_type } = useContext(MainContext);
 
     const fetchData = async () => {
         try {

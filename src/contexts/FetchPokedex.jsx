@@ -7,6 +7,26 @@ const Provider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState({});
     const [favorites, setFavorites] = useState(localStorage.getItem("favorites") ? JSON.parse(localStorage.getItem("favorites")) : [])
+    const [color_type, setType] = useState({
+        bug: 'bg-green-400',
+        dark: 'bg-gray-800',
+        dragon: 'bg-purple-800',
+        electric: 'bg-yellow-400',
+        fairy: 'bg-pink-400',
+        fighting: 'bg-red-900',
+        fire: 'bg-red-400',
+        flying: 'bg-indigo-600',
+        ghost: 'bg-indigo-700',
+        grass: 'bg-green-600',
+        ground: 'bg-yellow-700',
+        ice: 'bg-blue-400',
+        normal: 'bg-gray-500',
+        poison: 'bg-purple-600',
+        psychic: 'bg-pink-700',
+        rock: 'bg-yellow-600',
+        steel: 'bg-gray-400',
+        water: 'bg-blue-500',
+    });
 
     const addToFavorites = (index) => {
         const tmpFavorites = favorites;
@@ -40,7 +60,7 @@ const Provider = ({ children }) => {
         return <div>Loading...</div>;
     }
     return (
-        <MainContext.Provider value={{ addToFavorites, error, loading, data, favorites }}>
+        <MainContext.Provider value={{ addToFavorites, error, loading, data, favorites, color_type }}>
             {children}
         </MainContext.Provider>
     );
