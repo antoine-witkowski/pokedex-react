@@ -13,7 +13,7 @@ const Filter = () => {
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState({});
 
-    const { color_type } = useContext(MainContext);
+    const {color_type} = useContext(MainContext);
 
     const fetchData = async () => {
         try {
@@ -103,7 +103,8 @@ const Filter = () => {
     }
 
     const handleChange = (event) => {
-        setFilter(event.target.value)
+        window.history.pushState('', '', `/type/${event.target.value}`);
+        window.location.reload(false);
     }
 
     return (
@@ -113,25 +114,25 @@ const Filter = () => {
                     Select a pokemon type :
                     <select
                         className="bg-gray-200 appearance-none border-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                        value={filter} onChange={handleChange}>
-                        <option value="1">Normal</option>
-                        <option value="2">Fighting</option>
-                        <option value="3">Flying</option>
-                        <option value="4">Poison</option>
-                        <option value="5">Ground</option>
-                        <option value="6">Rock</option>
-                        <option value="7">Bug</option>
-                        <option value="8">Ghost</option>
-                        <option value="9">Steel</option>
-                        <option value="10">Fire</option>
-                        <option value="11">Water</option>
-                        <option value="12">Grass</option>
-                        <option value="13">Electric</option>
-                        <option value="14">Psychic</option>
-                        <option value="15">Ice</option>
-                        <option value="16">Dragon</option>
-                        <option value="17">Dark</option>
-                        <option value="18">Fairy</option>
+                        onChange={handleChange}>
+                        <option value="normal">Normal</option>
+                        <option value="fighting">Fighting</option>
+                        <option value="flying">Flying</option>
+                        <option value="poison">Poison</option>
+                        <option value="ground">Ground</option>
+                        <option value="rock">Rock</option>
+                        <option value="bug">Bug</option>
+                        <option value="ghost">Ghost</option>
+                        <option value="steel">Steel</option>
+                        <option value="fire">Fire</option>
+                        <option value="water">Water</option>
+                        <option value="grass">Grass</option>
+                        <option value="electric">Electric</option>
+                        <option value="psychic">Psychic</option>
+                        <option value="ice">Ice</option>
+                        <option value="dragon">Dragon</option>
+                        <option value="dark">Dark</option>
+                        <option value="fairy">Fairy</option>
                     </select>
                 </label>
             </form>
