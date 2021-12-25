@@ -5,7 +5,6 @@ import Contact from "./Containers/Contact";
 import Pokemon from "./Containers/Pokemon";
 import Favorites from "./Components/Favorites";
 import Filter from "./Containers/Filter";
-import {useState} from "react";
 
 function App() {
     const activeCSS = "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-purple-700 font-semibold"
