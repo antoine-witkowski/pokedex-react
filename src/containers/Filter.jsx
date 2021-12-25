@@ -82,12 +82,12 @@ const Filter = () => {
 
                     <h3 className={"text-center text-2xl font-bold uppercase border-2 border-black rounded-xl m-2 p-2 " + color_type[data.name]}>{data.name}</h3>
 
-                    <ul className="grid gap-4 grid-cols-5 grid-rows-3">
+                    <ul className="grid gap-4 grid-cols-8 grid-rows-3">
                         {Array.isArray(data.pokemon) ? data.pokemon.map(({pokemon}, index) => {
                             return (
                                 <li key={index}
                                     //className={"capitalize flex flex-row p-3 hover:bg-blue-500 hover:text-blue-200"}
-                                    className={"capitalize flex flex-row p-3 hover:" + color_type[data.name] + " hover:text-blue-200"}
+                                    className={"border capitalize flex flex-row p-3 hover:" + color_type[data.name] + " hover:text-blue-200"}
                                 >
                                     {pokemon.name}
                                 </li>
