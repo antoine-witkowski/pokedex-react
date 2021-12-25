@@ -1,9 +1,14 @@
 import {useContext, useEffect, useState} from "react";
 import MainContext from "../contexts/FetchPokedex";
+import {useParams} from "react-router-dom";
 
 const Filter = () => {
 
-    const [filter, setFilter] = useState(16);
+    const {type} = useParams();
+
+    const [filter, setFilter] = useState(1);
+
+
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState({});
@@ -12,6 +17,64 @@ const Filter = () => {
 
     const fetchData = async () => {
         try {
+            switch (type) {
+                case "normal":
+                    setFilter(1);
+                    break;
+                case "fighting":
+                    setFilter(2);
+                    break;
+                case "flying":
+                    setFilter(3);
+                    break;
+                case "poison":
+                    setFilter(4);
+                    break;
+                case "ground":
+                    setFilter(5);
+                    break;
+                case "rock":
+                    setFilter(6);
+                    break;
+                case "bug":
+                    setFilter(7);
+                    break;
+                case "ghost":
+                    setFilter(8);
+                    break;
+                case "steel":
+                    setFilter(9);
+                    break;
+                case "fire":
+                    setFilter(10);
+                    break;
+                case "water":
+                    setFilter(11);
+                    break;
+                case "grass":
+                    setFilter(12);
+                    break;
+                case "electric":
+                    setFilter(13);
+                    break;
+                case "psychic":
+                    setFilter(14);
+                    break;
+                case "ice":
+                    setFilter(15);
+                    break;
+                case "dragon":
+                    setFilter(16);
+                    break;
+                case "dark":
+                    setFilter(17);
+                    break;
+                case "fairy":
+                    setFilter(18);
+                    break;
+                default:
+                    setFilter(1);
+            }
             const response = await fetch(`https://pokeapi.co/api/v2/type/${Number(filter)}`);
             const data = await response.json();
 

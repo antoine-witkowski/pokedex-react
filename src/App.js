@@ -50,6 +50,7 @@ function App() {
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/favorites" element={<Favorites/>}/>
                 <Route path="/type" element={<Filter/>}/>
+                <Route path="/type/:type" element={<Filter/>}/>
             </Routes>
 
         </>
