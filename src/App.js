@@ -12,7 +12,7 @@ function App() {
     const inactiveCSS = "bg-white inline-block py-2 px-4 text-gray-400 font-semibold";
     return (
         <>
-            <h1 className="text-2xl font-bold">Welcome on Vitkov Pokedex</h1>
+            <h1 className="text-2xl font-bold text-center">Welcome on Vitkov Pokedex</h1>
             <nav>
                 <ul className="flex border-b">
                     <li className="-mb-px mr-1">
