@@ -1,6 +1,8 @@
 import {useContext, useEffect, useState} from "react";
 import MainContext from "../contexts/FetchPokedex";
 import {useParams} from "react-router-dom";
+import Loading from "../components/Loading";
+import Error from "../components/Error";
 
 const Filter = () => {
 
@@ -90,17 +92,10 @@ const Filter = () => {
         fetchData();
     }, [filter]);
 
-    if (error) {
-        return (
-            <div role="alert">
-                <div className="bg-red-500 text-white font-bold rounded-t px-4 py-2">ERROR</div>
-            </div>
-        );
-    }
+    if (error) {return (<><Error/></>);}
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
+    if (loading) {return(<><Loading/></>)}
+
 
     const handleChange = (event) => {
         window.history.pushState('', '', `/type/${event.target.value}`);

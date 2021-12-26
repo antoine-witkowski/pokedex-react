@@ -1,4 +1,6 @@
 import {createContext, useEffect, useState} from "react";
+import Error from "../components/Error";
+import Loading from "../components/Loading";
 
 const MainContext = createContext({});
 
@@ -52,13 +54,10 @@ const Provider = ({ children }) => {
         fetchData();
     }, []);
 
-    if (error) {
-        return <div>ERROR</div>;
-    }
+    if (error) {return (<><Error/></>);}
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
+    if (loading) {return(<><Loading/></>)}
+
     return (
         <MainContext.Provider value={{ addToFavorites, error, loading, data, favorites, color_type }}>
             {children}

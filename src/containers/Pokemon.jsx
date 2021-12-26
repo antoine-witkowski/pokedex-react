@@ -4,6 +4,8 @@ import Button from "../components/Button";
 import scale_logo from "../assets/electronic-scale.png";
 import ladder_logo from "../assets/ladder.png";
 import MainContext from "../contexts/FetchPokedex";
+import Error from "../components/Error";
+import Loading from "../components/Loading";
 
 const Pokemon = () => {
 
@@ -32,13 +34,9 @@ const Pokemon = () => {
         fetchData();
     }, []);
 
-    if (error) {
-        return <div>ERROR</div>;
-    }
+    if (error) {return (<><Error/></>);}
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
+    if (loading) {return(<><Loading/></>)}
 
     return (
         <>
