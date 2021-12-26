@@ -79,9 +79,8 @@ const Pokemon = () => {
 
                         <ul className="flex flex-row">
                             {pokemon.types.map((type, index) => (
-                                <Link to={`/type/${type.type.name}`}>
-                                    <li key={index}
-                                        className={"capitalize border-2 border-black rounded-xl m-2 p-2 " + color_type[type.type.name]}>
+                                <Link key ={index} to={`/type/${type.type.name}`}>
+                                    <li className={"capitalize border-2 border-black rounded-xl m-2 p-2 " + color_type[type.type.name]}>
                                         {type.type.name}
                                     </li>
                                 </Link>
