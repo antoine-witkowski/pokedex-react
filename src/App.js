@@ -22,7 +22,7 @@ function App() {
                     </li>
                     <li className="-mb-px mr-1">
                         <NavLink to="/pokemon" className={({isActive}) => (isActive ? activeCSS : inactiveCSS)}>
-                            Pokemon List
+                            Pokedex
                         </NavLink>
                     </li>
                     <li className="-mb-px mr-1">
