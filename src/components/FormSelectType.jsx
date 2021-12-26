@@ -11,7 +11,7 @@ const FormSelectType = () => {
                 Select a pokemon type :
                 <select
                     className="bg-gray-200 appearance-none border-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                    onChange={handleChange}>
+                    onClick={handleChange}>
                     <option value="normal" className="font-bold bg-gray-500">Normal</option>
                     <option value="fighting" className="font-bold bg-red-900">Fighting</option>
                     <option value="flying" className="font-bold bg-indigo-600">Flying</option>
